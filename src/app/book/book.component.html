@@ -1,0 +1,19 @@
+<ul *ngIf="booksList">
+   <li *ngFor="let book of booksList">{{book.name}} {{book.numberOfPages}} {{book.genre}}</li>
+</ul>
+<button (click)="goBack()">Назад</button>
+<br>
+<br>
+<br>
+<!-- Добавление книги -->
+<input type="text" #bookName>
+<button (click)="addBook(bookName)">Добавить книгу</button>
+<br>
+<br>
+
+<!-- РЕдактирование книги -->
+<select #idBook>
+   <option *ngFor="let book of booksList">{{book.name}}</option>
+</select>
+<input #bookName1>
+<button (click)="redactBook(idBook,bookName1)">Редактировать книгу</button>

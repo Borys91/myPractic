@@ -1,0 +1,51 @@
+<ul *ngIf="authorsList">
+   <li *ngFor="let author of authorsList">
+      {{author.id}} {{author.surname}} {{author.name}} {{author.middleName }}   {{author.date}}
+      <button (click)="showBook(author)">Просмотр книги</button>
+   </li>
+</ul>
+<!-- Добавление автора -->
+
+<input type="text" #surname>
+<input type="text" #name>
+<input type="date" name="" id="" #date>
+<button (click)="addAuthor(surname,name,date)">Добавить автора</button>
+<!--  -->
+<br>
+<br>
+<br>
+<br>
+<!-- Удаление автора -->
+<select #idAuthor>
+   <option *ngFor="let author of authorsList">{{author.id}}</option>
+</select>
+<button (click)="removeAuthor(idAuthor)">Удалить автора</button>
+<br>
+<br>
+<br>
+<!-- Редактирование автора -->
+<input #surname1>
+<select #idredactAuthor>
+   <option *ngFor="let author of authorsList">{{author.id}}</option>
+</select>
+<button (click)="redactAuthor(idredactAuthor,surname1)">Редактировать</button>
+<!--  -->
+<!-- <form #addAuthor="ngForm" novalidate>
+   <div>
+      <label for="">Фамилия :</label>
+      <input type="text" #surname>
+   </div>
+   <div>
+      <label for="">Имя :</label>
+      <input type="text" #name>
+   </div>
+   <div>
+      <label for="">Отчество :</label>
+      <input type="text" #name>
+   </div>
+   <div>
+      <label for="">Дата рождения:</label>
+      <input type="date" name="" id="" #date>
+   </div>
+   <button [disabled]="myForm.invalid" (click)="addAuthor(surname,name,date)">Добавить автора</button>
+</form> -->
